@@ -4,16 +4,8 @@ A minimal Android app to display notes in the notification bar.
 
 ## Features
 
-- Tap app icon to show floating multi-line input dialog
-- Press Enter to send content to notification bar
+- Input content and tap Noi buttion to send content to notification bar
 - Tap notification to edit content
-- Only one notification is kept in the notification bar
-
-## Tech Stack
-
-- Kotlin
-- Android SDK 24+
-- No persistent storage required
 
 ## Signing Configuration
 
