@@ -53,19 +53,17 @@
     </androidx.cardview.widget.CardView>
 
     <!-- Noi Button -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/noiButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/primary"
+        android:background="@drawable/button_background"
         android:paddingHorizontal="48dp"
         android:paddingVertical="14dp"
         android:text="Noi"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        app:cornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputCard" />
