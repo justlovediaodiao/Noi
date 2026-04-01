@@ -9,7 +9,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.view.inputmethod.EditorInfo
+import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -32,20 +32,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         editText = findViewById(R.id.editText)
+        val noiButton: Button = findViewById(R.id.noiButton)
 
         // Content from notification click
         handleIntent(intent)
 
-        // Listen for Enter key to send notification
-        editText.setOnEditorActionListener { _, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_DONE ||
-                (event?.keyCode == android.view.KeyEvent.KEYCODE_ENTER && event.action == android.view.KeyEvent.ACTION_DOWN)
-            ) {
-                sendNoteToNotification()
-                true
-            } else {
-                false
-            }
+        // Noi button click to send notification
+        noiButton.setOnClickListener {
+            sendNoteToNotification()
         }
 
         // Auto show keyboard

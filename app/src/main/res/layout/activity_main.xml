@@ -4,14 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/background"
-    android:fitsSystemWindows="true">
+    android:background="@color/background">
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="120dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:gravity="top|start"
         android:hint="Enter your note..."
         android:textSize="16sp"
@@ -20,7 +19,16 @@
         android:textColor="@color/text_primary"
         android:textColorHint="@color/text_hint"
         android:inputType="textMultiLine|textCapSentences"
-        android:imeOptions="actionDone"
         android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/noiButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Noi"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primary"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>
