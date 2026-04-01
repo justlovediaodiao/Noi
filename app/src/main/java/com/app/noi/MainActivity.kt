@@ -34,10 +34,7 @@ class MainActivity : AppCompatActivity() {
         editText = findViewById(R.id.editText)
 
         // Content from notification click
-        intent.getStringExtra(EXTRA_NOTE_CONTENT)?.let {
-            editText.setText(it)
-            editText.setSelection(it.length)
-        }
+        handleIntent(intent)
 
         // Listen for Enter key to send notification
         editText.setOnEditorActionListener { _, actionId, event ->
@@ -56,6 +53,19 @@ class MainActivity : AppCompatActivity() {
             editText.requestFocus()
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
             imm.showSoftInput(editText, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
+        }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: Intent) {
+        intent.getStringExtra(EXTRA_NOTE_CONTENT)?.let {
+            editText.setText(it)
+            editText.setSelection(it.length)
         }
     }
 
